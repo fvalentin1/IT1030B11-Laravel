@@ -21,6 +21,7 @@ cd nombredesuproyecto
 ```bash
 php artisan serve
 ```
+Para detener el servicio, es necesario oprimir la combinación `Ctrl` + `C`.
 
 ## ¿Como configurar la base de datos?
 Es necesario configurar la base de datos del proyecto, para esto debemos ubicar dentro de la carpeta de nuestro proyecto un archivo llamado `.env`, el cual contiene el valor de todas las variables de entorno del proyecto, entre ellas la configuración de la base de datos.

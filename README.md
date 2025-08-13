@@ -10,6 +10,11 @@ Luego de abrir la carpeta de nuestros proyectos, desde la terminal de VS Code ya
 composer create-project --prefer-dist laravel/laravel nombredesuproyecto "8.*"
 ```
 
+Forzar instalación:
+```bash
+composer create-project --prefer-dist laravel/laravel nombredesuproyecto "8.*" --ignore-platform-reqs
+```
+
 Este comando creará una carpeta llamada `nombredesuproyecto` dentro de `C://xampp/htdocs/xampp`. Esta carpeta contiene un proyecto en blanco de Laravel 8.
 
 Debemos ingresar a esta carpeta dentro de la terminal. Para esto debemos hacer:

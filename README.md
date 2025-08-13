@@ -56,16 +56,38 @@ Esto agregará tablas de usuarios, que por el momento no están en uso.
 
 ## Crear login de usuarios
 
-### Instalar paquete Laravel/UI
-```composer require laravel/ui "^3.0"```
+### Instalar paquete Laravel/UI:
+```bash
+composer require laravel/ui "^3.0"
+```
 
-### Generar Auth y estilos con Laravel
-```php artisan ui bootstrap```
-```php artisan ui bootstrap --auth```
+### Generar Auth y estilos con Laravel:
 
-### Instalar 
-```npm install```
-```npm run dev```
-```npm run dev```
+Esto instalará Bootstrap en nuestro proyecto 
+```bash
+php artisan ui bootstrap
+```
+Esto instalará un login funcional básico en nuestro proyecto
+```bash
+php artisan ui bootstrap --auth
+```
+
+### Compilar Laravel Mix
+
+Para esto debemos abrir una consola de NodeJS en la ruta de nuestro proyecto, en `C://xampp/htdocs/xampp/nombredesuproyecto`.
+La consola/terminal de NodeJS se llama `Node.js command prompt`.
+
+Instalar dependencias JS/CSS necesarias para compilar.
+```bash
+npm install
+```
+Compilar los archivos y dejarlos listos para el navegador.
+```bash
+npm run dev
+```
+Reduntante, pero asegura la ejecución de Laravel Mix.
+```bash
+npm run dev
+```
 
 

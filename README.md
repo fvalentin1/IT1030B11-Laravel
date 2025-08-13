@@ -53,3 +53,19 @@ Luego debemos crear una base de datos de *MySQL* en **PhpMyAdmin** que debe llam
 php artisan migrate
 ```
 Esto agregará tablas de usuarios, que por el momento no están en uso.
+
+## Crear login de usuarios
+
+### Instalar paquete Laravel/UI
+```composer require laravel/ui "^3.0"```
+
+### Generar Auth y estilos con Laravel
+```php artisan ui bootstrap```
+```php artisan ui bootstrap --auth```
+
+### Instalar 
+```npm install```
+```npm run dev```
+```npm run dev```
+
+

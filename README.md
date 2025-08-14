@@ -10,12 +10,32 @@ Luego de abrir la carpeta de nuestros proyectos, desde la terminal de VS Code ya
 composer create-project --prefer-dist laravel/laravel nombredesuproyecto "8.*"
 ```
 
-Forzar instalación:
+Forzar instalación en caso de error de versión de PHP:
 ```bash
 composer create-project --prefer-dist laravel/laravel nombredesuproyecto "8.*" --ignore-platform-reqs
 ```
 
 Este comando creará una carpeta llamada `nombredesuproyecto` dentro de `C://xampp/htdocs/xampp`. Esta carpeta contiene un proyecto en blanco de Laravel 8.
+
+Si se marca un error al descomprimir los archivos necesarios del proyecto, es necesario ir a la dirección `C://xampp/php` y editar con el Bloc de Notas o con VS Code el archivo `php.ini`.
+Una vez abierto el editor, buscamos con `F3` o `Ctrl + F` el texto **extension=zip**.
+Debería encontrar algo como ésto:
+```ini
+;extension=soap
+;extension=sockets
+;extension=sodium
+;extension=sqlite3
+;extension=tidy
+;extension=xsl
+;extension=zip
+```
+
+Si la línea ```extension=zip``` se encuentra con el punto y coma (```;```) al inicio, se debe borrar el punto y coma y luego guardar el archivo de texto. (Es aproximádamente, la línea 962).
+
+---
+
+Si el proyecto fue creado exitosamente, veremos el mensaje:
+```Application key set successfully.```
 
 Debemos ingresar a esta carpeta dentro de la terminal. Para esto debemos hacer:
 ```bash
@@ -61,6 +81,11 @@ Esto agregará tablas de usuarios, que por el momento no están en uso.
 composer require laravel/ui "^3.0"
 ```
 
+Forzar instalación en caso de error de versión de PHP:
+```bash
+composer require laravel/ui:^3.0 --dev --ignore-platform-reqs
+```
+
 ### Generar Auth y estilos con Laravel:
 
 Esto instalará Bootstrap en nuestro proyecto 
@@ -88,6 +113,18 @@ npm run dev
 Reduntante, pero asegura la ejecución de Laravel Mix.
 ```bash
 npm run dev
+```
+
+### Actualizar la base de datos
+Esto borrará la base de datos por completo, y aplicará la última configuración realizada.
+```bash
+php artisan migrate:fresh
+```
+
+### Optimize
+En caso de que no se vean cambios en alguna de las vistas, es necesario eliminar la caché y algunas configuraciones temporales mediante:
+```bash
+php artisan optimize
 ```
 
 
